@@ -44,9 +44,6 @@ jobs:
   
     runs-on: ubuntu-latest
 
-    concurrency:
-      group: static-test
-
     defaults:
       run:
         working-directory: ./example-app
@@ -72,9 +69,6 @@ jobs:
     needs: build
   
     runs-on: ubuntu-latest
-
-    concurrency:
-      group: static-test
 
     defaults:
       run:
@@ -102,9 +96,6 @@ jobs:
   
     runs-on: ubuntu-latest
 
-    concurrency:
-      group: static-test
-
     defaults:
       run:
         working-directory: ./example-app
@@ -127,7 +118,7 @@ jobs:
       run: poetry run task security
 
   unittests:
-    needs: lint
+    needs: [lint, formatter, security]
 
     runs-on: ubuntu-latest
 
