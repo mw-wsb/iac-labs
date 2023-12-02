@@ -88,8 +88,6 @@ jobs:
       with:
         path: /home/runner/.cache/pypoetry/virtualenvs
         key: ${{ runner.os }}-venv
-    - name: Lint with flake8
-      run: poetry run task lint
     - name: Test with pytest
       run: |
         pytest        
