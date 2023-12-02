@@ -137,6 +137,7 @@ jobs:
       run: poetry run task security
 
   unittests:
+    if: ${{ always() }}
     needs: [lint, formatter, security]
 
     strategy:
