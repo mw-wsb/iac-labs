@@ -26,7 +26,7 @@ jobs:
       id: cached-poetry-dependencies
       uses: actions/cache@v3
       with:
-        path: /home/runner/work/iac-labs/iac-labs//example-app/.venv
+        path: /home/runner/work/iac-labs/iac-labs/./example-app.venv
         key: ${{ runner.os }}-venv
     - uses: actions/checkout@v3
     - name: Set up Python 3.10
@@ -55,7 +55,7 @@ jobs:
       id: cached-poetry-dependencies
       uses: actions/cache@v3
       with:
-        path: /home/runner/work/iac-labs/iac-labs//example-app/.venv
+        path: /home/runner/work/iac-labs/iac-labs/./example-app/.venv
         key: ${{ runner.os }}-venv
     - name: Lint with flake8
       run: |
@@ -78,7 +78,7 @@ jobs:
       id: cached-poetry-dependencies
       uses: actions/cache@v3
       with:
-        path: /home/runner/work/iac-labs/iac-labs//example-app/.venv
+        path: /home/runner/work/iac-labs/iac-labs/./example-app/.venv
         key: ${{ runner.os }}-venv
     - name: Test with pytest
       run: |
